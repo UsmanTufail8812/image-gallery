@@ -1,0 +1,35 @@
+<!-- index.html --><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="gallery-container">
+    <div class="main-image">
+      <img id="current-image" src="images/img1.jpg" alt="Gallery Image" />
+    </div>
+    <div class="thumbnail-container">
+      <img src="images/img1.jpg" onclick="setImage(this)" />
+      <img src="images/img2.jpg" onclick="setImage(this)" />
+      <img src="images/img3.jpg" onclick="setImage(this)" />
+      <img src="images/img4.jpg" onclick="setImage(this)" />
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>/* style.css */ body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; }
+
+.gallery-container { max-width: 800px; margin: 40px auto; padding: 20px; background: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+
+.main-image img { width: 100%; height: auto; border-radius: 10px; }
+
+.thumbnail-container { display: flex; justify-content: center; margin-top: 15px; gap: 10px; }
+
+.thumbnail-container img { width: 100px; height: 70px; cursor: pointer; object-fit: cover; border: 2px solid transparent; border-radius: 5px; transition: transform 0.2s, border 0.2s; }
+
+.thumbnail-container img:hover { transform: scale(1.1); border-color: #007bff; }
+
+// script.js function setImage(thumbnail) { const mainImg = document.getElementById("current-image"); mainImg.src = thumbnail.src; }
+
